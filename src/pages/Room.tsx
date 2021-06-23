@@ -17,6 +17,17 @@ type firebaseQuestions = Record<string, {
     isHighLighted: boolean,
     isAnswered: boolean,
 }>
+type Questions = {
+    id:string;
+    content: string,
+    author: {
+        name: string,
+        avatar: string,
+    },
+    isHighLighted: boolean,
+    isAnswered: boolean,
+}
+
 type RoomParams = {
     id: string;
 }
@@ -25,13 +36,16 @@ export function Room() {
     const params = useParams<RoomParams>();
     const { user } = useAuth();
     const [newQuestion, setNewQuestion] = useState('');
+    const [questions, setQuestions] = useState<Questions[]>([]);
+    const [title, settTitle] = useState('');
+
 
     const roomId = params.id;
 
     useEffect(() => {
         const roomRef = database.ref(`rooms/${roomId}`);
 
-        roomRef.once('value', room => {
+        roomRef.on('value', room => {
             const databaseRoom = room.val();
             const firebaseUqstions: firebaseQuestions = databaseRoom.questions ?? {};
             const parsedQuestions = Object.entries(firebaseUqstions).map(([key, value]) => {
@@ -44,7 +58,8 @@ export function Room() {
                 }
 
             });
-            console.log(parsedQuestions);
+            settTitle(databaseRoom.title);
+            setQuestions(parsedQuestions);
         })
 
     }, [roomId]);
@@ -80,8 +95,8 @@ export function Room() {
             </header>
             <main>
                 <div className="room-title">
-                    <h1>Sala React Q&A</h1>
-                    <span>4 perguntas</span>
+                    <h1>Sala {title}</h1>
+                    { questions.length > 0 && <span>{questions.length} pergunta</span> }
                 </div>
                 <br />
                 <br />
@@ -107,6 +122,10 @@ export function Room() {
                         </Button>
                     </div>
                 </form>
+
+                 {JSON.stringify(questions)};               
+
+
             </main>
         </div>
     );
