@@ -60,7 +60,6 @@ export function Home() {
                         <Button type="submit">
                             Entrar na sala
                         </Button>
-<h1>tag locas</h1>
                     </form>
                 </div>
             </main>
