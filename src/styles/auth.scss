@@ -4,7 +4,7 @@
     height: 100vh;
 
 }
-asidE{
+aside{
  flex:7;  
  background: #835afd; 
  color: #fff;
@@ -15,6 +15,11 @@ asidE{
  padding: 120px 88px;
  img{
      max-width: 320px;
+ }
+ .user-avatar{
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
  }
  strong{
      font: 700 'Poppins' sans-serif;
@@ -43,9 +48,14 @@ main{
     > img{
         align-self: center;
     }
+    img:nth-child( 2 ) {
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+ 
     h2{
         font-size: 24px;
-        margin: 64px 0 24px;
+        margin: 34px 0 24px;
         font-family: 'Poppins', sans-serif;
     }
     form{
@@ -72,6 +82,7 @@ main{
         }
     }
 }
+
     .create-room{
         margin-top: 64px;
         height:50px;
