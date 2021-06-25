@@ -26,7 +26,7 @@ O Letmeask é uma plataforma que tem a proposta de resolver problemas de acúmul
   
 ## Installation 
 
-Install my-project with npm
+Install my-project with yarn
 
 ```bash 
   cd my-project
