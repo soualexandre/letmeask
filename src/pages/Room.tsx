@@ -9,6 +9,7 @@ import { Question } from '../Components/Questions'
 
 import '../styles/room.scss';
 import { useRoom } from '../hooks/useRoom';
+import { useTheme } from '../hooks/useTheme';
 
 
 type RoomParams = {
@@ -20,6 +21,8 @@ export function Room() {
     const { user } = useAuth();
     const [newQuestion, setNewQuestion] = useState('');
     const roomId = params.id;
+    const {theme, toggleTheme} = useTheme();
+
 
     const { title, questions } = useRoom(roomId);
 
@@ -59,11 +62,15 @@ export function Room() {
     }
 
     return (
-        <div id="page-room">
+        <div id="page-room" className={theme}>
             <header>
                 <div className="content">
                     <img src={logoImg} alt="Letmeask" />
+                    <div>
+                    <button onClick={toggleTheme}>Darkmode</button>
                     <RoomCode code={roomId} />
+                    </div>
+               
                 </div>
             </header>
             <main>

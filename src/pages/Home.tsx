@@ -8,13 +8,14 @@ import '../styles/auth.scss';
 import { useAuth } from '../hooks/useAuth'
 import { FormEvent, useState } from 'react';
 import { database } from '../services/firebase';
+import { useTheme } from '../hooks/useTheme';
 
 
 export function Home() {
     const history = useHistory();
     const { user, signInWithGoogle } = useAuth()
     const [roomCode, setRoomCode] = useState('');
-
+    const {theme} = useTheme();
     async function handleCreateRoom() {
         if (!user) {
             await signInWithGoogle();
@@ -39,8 +40,8 @@ if(roomRef.val().endedAt){
 
         history.push(`/rooms/${roomCode}`);
     }
-    return (
-        <div id="page-auth">
+    return ( 
+        <div id="page-auth" className={theme}>
             <aside>
                 <img src={illustrationImg} alt="Illustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de 1&amp;A ao-vivo</strong>
