@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-  <img alt="letmeask" src=".github/bg-project.png" width="100%">
+  <img alt="letmeask" src="./github/bg-project.png" width="100%">
 </p>
 
 ## #NLW
