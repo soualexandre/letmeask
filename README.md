@@ -25,8 +25,10 @@ O Letmeask é uma plataforma que tem a proposta de resolver problemas de acúmul
 [See website](https://letmeask-f7dbc.web.app).
 
 ## Additional Resources
-  *DarkMode
-  *Regras de segurança
+
+  - DarkMode
+  
+  - Regras de segurança
   
 ## Installation 
 
