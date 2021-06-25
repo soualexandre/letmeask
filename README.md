@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-  <img alt="letmeask" src="./github/bg-project.png" width="100%">
+  <img alt="letmeask" src="./github/bg-project.png" width="80%">
 </p>
 
 ## #NLW
@@ -23,6 +23,10 @@ O Letmeask é uma plataforma que tem a proposta de resolver problemas de acúmul
 ## View demo
 
 [See website](https://letmeask-f7dbc.web.app).
+
+## Additional Resources
+  *DarkMode
+  *Regras de segurança
   
 ## Installation 
 
