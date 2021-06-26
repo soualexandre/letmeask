@@ -2,7 +2,10 @@
     display: flex;
     align-items: stretch;
     height: 100vh;
-    
+    &.dark{
+        background: #22232C;
+        text-decoration: underline wavy #88ff88;
+    }
 }
 aside{
  flex:7;  
@@ -131,4 +134,12 @@ main{
         }
 
     }
+}
+#page-auth{
+    &.dark{
+  
+    }
+}
+#page-room main .room-title h1 {
+    color: #fff
 }

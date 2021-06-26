@@ -63,6 +63,7 @@ export function AdminRoom() {
                     <img src={logoImg} alt="Letmeask" />
                     <div>
                         <button onClick={toggleTheme}>Darkmode</button>
+                        
                         <RoomCode code={roomId} />
                         <Button isOutlined onClick={handleEndRoom}>Encerrar a sala</Button>
                     </div>
